@@ -33,7 +33,10 @@ const Search = ({ productsArr }) => {
       <ul>
         {searchToggle ? (
           <>
-            <SearchedList searchedLists={searchedLists} />
+            <SearchedList
+              searchedLists={searchedLists}
+              setSearchToggle={setSearchToggle}
+            />
           </>
         ) : (
           <></>

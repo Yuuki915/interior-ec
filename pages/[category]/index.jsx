@@ -2,7 +2,7 @@ import ItemContainer from "../../components/parts/ItemContainer";
 import { categoryQurey } from "../../util/productQuery";
 import { storefront } from "../../util/shopify";
 import { gql } from "graphql-request";
-import styles from "../../styles/products/Products.module.css";
+import styles from "../../styles/categories/Products.module.css";
 
 export async function getStaticPaths() {
   const { data } = await storefront(gql`
