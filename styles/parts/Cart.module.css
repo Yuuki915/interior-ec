@@ -1,0 +1,93 @@
+.container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: right;
+  }
+  .closeIcon {
+    align-items: baseline;
+    cursor: pointer;
+  }
+  .h2 {
+    font-weight: 600;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #3d4c69;
+  }
+  .h3 {
+    text-align: right;
+    font-size: 23px;
+  }
+  .itemContainer {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .img {
+    background-color: #f3f3f3;
+  }
+  .imageWrapper {
+    width: 130px;
+    height: 100px;
+    position: relative;
+  }
+  
+  .detailContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+    letter-spacing: 0.5px;
+  }
+  .price {
+    font-size: 23px;
+    font-weight: 600;
+  }
+  
+  
+  .actions {
+    display: flex;
+  }
+  .noitems {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (min-width: 600px) {
+    .container {
+      width: 600px;
+      margin-left: auto;
+      /* margin-right: 2rem; */
+    }
+    .itemContainer {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .imageWrapper {
+      width: 230px;
+      height: 160px;
+      max-width: 400px;
+      max-height: 230px;
+      position: relative;
+    }
+  
+    .itemContainer {
+    }
+  }
+  

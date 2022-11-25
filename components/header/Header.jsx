@@ -6,7 +6,6 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import { TfiShoppingCart } from "react-icons/tfi";
 import Cart from "../parts/Cart";
-import Fav from "../parts/Fav";
 import Bg from "../parts/Bg";
 
 import styles from "../../styles/header/Header.module.css";
