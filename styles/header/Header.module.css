@@ -1,0 +1,61 @@
+.container {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: #fff;
+    color: #3d4c69;
+    box-shadow: 0 0 5px #3d4c69;
+    padding-bottom: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menuIcon {
+    margin: 1rem;
+    align-items: baseline;
+    cursor: pointer;
+  }
+  
+  .logo {
+    display: inline-block;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem;
+  }
+  
+  .cartHeart {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .bg {
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 7rem);
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  @media (min-width: 600px) {
+    .container {
+      padding-bottom: 0;
+    }
+    .header {
+      padding: 1rem 50px;
+    }
+    .hamburgermenu {
+      display: none;
+    }
+  
+    .cartHeart {
+      font-size: 2rem;
+      margin: 0 0 0 1rem;
+    }
+  }
+  
