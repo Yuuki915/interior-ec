@@ -31,7 +31,7 @@ export default function Home({ data }) {
       <Head>
         <title>Interior EC</title>
         <meta name="description" content="Find your best interior" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <Hero />
