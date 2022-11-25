@@ -1,0 +1,15 @@
+.container {
+  color: #3d4c69;
+  padding-bottom: 4rem;
+  background-color: #f3f3f3;
+}
+
+.h1 {
+  padding: 3rem 0;
+}
+.itemContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 2rem;
+}
