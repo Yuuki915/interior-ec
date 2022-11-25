@@ -1,4 +1,4 @@
-import { storefront } from "../../util/shopify";
+import { storefront } from "../../components/util/shopify";
 import { gql } from "graphql-request";
 
 export default async function handler(req, res) {

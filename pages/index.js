@@ -4,8 +4,8 @@ import News from "../components/main/News";
 import Categories from "../components/main/Categories";
 import Pickup from "../components/main/Pickup";
 import DesignedRoom from "../components/main/DesignedRoom";
-import { storefront } from "../util/shopify";
-import { allData } from "../util/productQuery";
+import { storefront } from "../components/util/shopify";
+import { allData } from "../components/util/productQuery";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ data }) {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { gql } from "graphql-request";
-import { singleProductQuery } from "../../../util/productQuery";
-import { storefront } from "../../../util/shopify";
+import { storefront } from "../../../components/util/shopify";
+import { singleProductQuery } from "../../../components/util/productQuery";
 import AddToCartBtn from "../../../components/parts/AddToCartBtn";
 import ProductCard from "../../../components/parts/ProductCard";
 import styles from "../../../styles/categories/Product.module.css";
