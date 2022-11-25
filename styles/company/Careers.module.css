@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  color: #3d4c69;
+}
+
+.h1 {
+  font-size: 30px;
+  margin: 2rem 0;
+  letter-spacing: 2px;
+}
+.img {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+  background-image: url("/images/careers2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 30%;
+  opacity: 0.8;
+}
+
+.textContainer {
+  padding: 2rem 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.h2 {
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+.text {
+  line-height: 27px;
+}
+
+@media (min-width: 600px) {
+  .img {
+    height: 40vh;
+    background-position: 50% 30%;
+  }
+  .textContainer {
+    padding: 2rem 2rem;
+  }
+}
