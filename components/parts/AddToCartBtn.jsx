@@ -18,6 +18,7 @@ const AddToCartBtn = ({ variantId }) => {
         cartId: localCartData.cartId,
         variantId: id,
       };
+      // console.log(data);
       const response = await fetch("/api/add-to-cart", {
         method: "POST",
         body: JSON.stringify(data),

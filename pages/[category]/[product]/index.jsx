@@ -4,7 +4,7 @@ import { singleProductQuery } from "../../../util/productQuery";
 import { storefront } from "../../../util/shopify";
 import AddToCartBtn from "../../../components/parts/AddToCartBtn";
 import ProductCard from "../../../components/parts/ProductCard";
-import styles from "../../../styles/product/Product.module.css";
+import styles from "../../../styles/categories/Product.module.css";
 
 export async function getStaticPaths() {
   const { data } = await storefront(gql`

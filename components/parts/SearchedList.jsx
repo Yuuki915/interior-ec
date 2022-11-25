@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/parts/SearchedList.module.css";
 
-const SearchedList = ({ searchedLists }) => {
+const SearchedList = ({ searchedLists, setSearchToggle }) => {
+  const closeList = () => {
+    setSearchToggle(false);
+  };
   return (
     <div className={styles.searchedList}>
       <ul>
@@ -15,7 +18,7 @@ const SearchedList = ({ searchedLists }) => {
 
           return (
             <Link key={key} href={`/${category}/${itemHandle}`}>
-              <div className={styles.list}>
+              <div className={styles.list} onClick={closeList}>
                 <div className={styles.listImg}>
                   <Image src={img[0]} alt="" layout="fill" />
                 </div>

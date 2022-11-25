@@ -5,61 +5,8 @@ import { IoMdClose } from "react-icons/io";
 
 import styles from "../../styles/parts/Cart.module.css";
 
-const Cart = ({ closeCart }) => {
-  const [cart, setCart] = useState({
-    id: null,
-    lines: [],
-  });
-
-  const [open, setOpen] = useState(false);
-  const toggleCartOpen = () => {
-    setOpen(!open);
-  };
-
-  const emptyCart = () => {
-    window.localStorage.removeItem("eclat:shopify:cart");
-    setCart({
-      id: null,
-      lines: [],
-    });
-  };
-
+const Cart = ({ cart, emptyCart, closeCart }) => {
   useEffect(() => {
-    async function getCart() {
-      let localCartData = JSON.parse(
-        window.localStorage.getItem("eclat:shopify:cart")
-      );
-
-      if (localCartData) {
-        const existingCart = await fetch(
-          `/api/cart-load?cartId=${localCartData.cartId}`
-        ).then((res) => res.json());
-
-        setCart({
-          id: localCartData.cartId,
-          checkoutUrl: localCartData.checkoutUrl,
-          estimatedCost: existingCart.cart.estimatedCost,
-          lines: existingCart.cart.lines.edges,
-        });
-        return;
-      }
-
-      localCartData = await fetch("/api/cart").then((res) => res.json());
-      setCart({
-        id: localCartData.cartId,
-        checkoutUrl: localCartData.checkoutUrl,
-        estimatedCost: null,
-        lines: [],
-      });
-
-      window.localStorage.setItem(
-        "eclat:shopify:cart",
-        JSON.stringify(localCartData)
-      );
-    }
-
-    getCart();
-
     const interval = setInterval(() => {
       const state = window.localStorage.getItem("eclat:shopify:status");
 
@@ -74,7 +21,7 @@ const Cart = ({ closeCart }) => {
   }, []);
 
   const total = cart?.estimatedCost?.totalAmount.amount;
-
+  console.log(cart);
   return (
     <div className={styles.container}>
       <div>
@@ -113,7 +60,7 @@ const Cart = ({ closeCart }) => {
                   />
                   <p>image</p>
                 </div>
-                
+
                 <div className={styles.detailContainer}>
                   <div className={styles.details}>
                     <p className={styles.name}>

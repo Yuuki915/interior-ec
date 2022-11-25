@@ -1,19 +1,80 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Search from "../parts/Search";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
-import { TfiShoppingCart } from "react-icons/tfi";
+import { BsCart3 } from "react-icons/bs";
 import Cart from "../parts/Cart";
 import Bg from "../parts/Bg";
 
 import styles from "../../styles/header/Header.module.css";
 
 const Header = ({ productsArr, categories }) => {
+  const [cart, setCart] = useState({
+    id: null,
+    lines: [],
+  });
   const [menuToggle, setMenuToggle] = useState(true);
   const [cartToggle, setCartToggle] = useState(false);
-  const [favToggle, setFavToggle] = useState(false);
+  const [qty, setQty] = useState(0);
+
+  const emptyCart = () => {
+    window.localStorage.removeItem("eclat:shopify:cart");
+    setCart({
+      id: null,
+      lines: [],
+    });
+  };
+  useEffect(() => {
+    async function getCart() {
+      let localCartData = JSON.parse(
+        window.localStorage.getItem("eclat:shopify:cart")
+      );
+
+      if (localCartData) {
+        const existingCart = await fetch(
+          `/api/cart-load?cartId=${localCartData.cartId}`
+        ).then((res) => res.json());
+
+        setCart({
+          id: localCartData.cartId,
+          checkoutUrl: localCartData.checkoutUrl,
+          estimatedCost: existingCart.cart.estimatedCost,
+          lines: existingCart.cart.lines.edges,
+        });
+        return;
+      }
+
+      localCartData = await fetch("/api/cart").then((res) => res.json());
+      setCart({
+        id: localCartData.cartId,
+        checkoutUrl: localCartData.checkoutUrl,
+        estimatedCost: null,
+        lines: [],
+      });
+
+      window.localStorage.setItem(
+        "eclat:shopify:cart",
+        JSON.stringify(localCartData)
+      );
+    }
+
+    getCart();
+
+    const interval = setInterval(() => {
+      const state = window.localStorage.getItem("eclat:shopify:status");
+
+      if (state && state === "dirty") {
+        getCart();
+        window.localStorage.setItem("eclat:shopify:status", "clean");
+      }
+    }, 500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+  // console.log(cart);
 
   const closeHandler = () => {
     setMenuToggle(false);
@@ -24,14 +85,14 @@ const Header = ({ productsArr, categories }) => {
 
   const HandleCart = () => {
     setCartToggle(!cartToggle);
-    setFavToggle(false);
   };
   const closeCart = () => {
     setCartToggle(false);
   };
-  const closeFav = () => {
-    setFavToggle(false);
-  };
+
+  useEffect(() => {
+    setQty(cart.lines.length);
+  }, [cart.lines.length]);
 
   return (
     <div className={styles.container}>
@@ -54,7 +115,8 @@ const Header = ({ productsArr, categories }) => {
           height={50}
         />
         <div className={styles.icons}>
-          <TfiShoppingCart className={styles.cartHeart} onClick={HandleCart} />
+          <BsCart3 className={styles.cartIcon} onClick={HandleCart} />
+          {qty === 0 ? <></> : <div className={styles.qty}>{qty}</div>}
         </div>
       </div>
 
@@ -69,7 +131,7 @@ const Header = ({ productsArr, categories }) => {
       {cartToggle ? (
         <>
           <Bg close={closeCart} />
-          <Cart closeCart={closeCart} />
+          <Cart cart={cart} emptyCart={emptyCart} closeCart={closeCart} />
         </>
       ) : (
         <></>

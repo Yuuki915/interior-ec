@@ -1,41 +1,40 @@
 .searchedList {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-48%);
-    width: 50%;
-    border-radius: 5px;
-    box-shadow: 0 0 2px #3d4c69;
-  
-    color: #3d4c69;
-    font-size: 18px;
-    background-color: #fff;
-  }
-  
-  .list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid#3d4c69;
-    padding-bottom: 1rem;
-  
-    cursor: pointer;
-  }
-  .list:hover {
-    background-color: #f3f3f3;
-  }
-  .list:last-child {
-    border-bottom: none;
-  }
-  .listImg {
-    width: 80px;
-    height: 50px;
-    position: relative;
-    background-color: #3d4c69;
-  }
-  .listCategory {
-    color: #757f94;
-    font-size: 13px;
-  }
-  
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-48%);
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #3d4c69;
+
+  color: #3d4c69;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid#3d4c69;
+  padding-bottom: 1rem;
+
+  cursor: pointer;
+}
+.list:hover {
+  background-color: #f3f3f3;
+}
+.list:last-child {
+  border-bottom: none;
+}
+.listImg {
+  width: 80px;
+  height: 50px;
+  position: relative;
+  background-color: #63728f;
+}
+.listCategory {
+  color: #757f94;
+  font-size: 13px;
+}
