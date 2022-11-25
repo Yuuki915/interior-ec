@@ -21,7 +21,7 @@ const Cart = ({ cart, emptyCart, closeCart }) => {
   }, []);
 
   const total = cart?.estimatedCost?.totalAmount.amount;
-  console.log(cart);
+  // console.log(cart);
   return (
     <div className={styles.container}>
       <div>
