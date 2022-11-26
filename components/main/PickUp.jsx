@@ -18,4 +18,4 @@ const PickUp = ({ products }) => {
   );
 };
 
-export default Pickup;
+export default PickUp;
