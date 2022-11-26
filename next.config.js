@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
-  
+
   env: {
     SHOPIFY_STORE_DOMAIN: process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMEIN,
     SHOPIFY_STOREFRONT_ACCESSTOKEN: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
