@@ -1,7 +1,7 @@
 import ProductCard from "../parts/ProductCard";
 import styles from "../../styles/main/PickUp.module.css";
 
-const Pickup = ({ products }) => {
+const PickUp = ({ products }) => {
   return (
     <section className={styles.container}>
       <h1 className={styles.h1}>Pick Up</h1>

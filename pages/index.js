@@ -2,10 +2,10 @@ import Head from "next/head";
 import Hero from "../components/main/Hero";
 import News from "../components/main/News";
 import Categories from "../components/main/Categories";
-import Pickup from "../components/main/Pickup";
+import PickUp from "../components/main/PickUp";
 import DesignedRoom from "../components/main/DesignedRoom";
-import { storefront } from "../components/util/shopify";
-import { allData } from "../components/util/productQuery";
+import { storefront } from "../util/shopify";
+import { allData } from "../util/ProductQuery";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ data }) {
@@ -38,7 +38,7 @@ export default function Home({ data }) {
       <News />
 
       <Categories categories={catData} />
-      <Pickup products={products} />
+      <PickUp products={products} />
       <DesignedRoom />
     </div>
   );

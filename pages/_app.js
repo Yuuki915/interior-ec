@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
-import { storefront } from "../components/util/shopify";
-import { allData } from "../components/util/productQuery";
+import { storefront } from "../util/shopify";
+import { allData } from "../util/ProductQuery";
 import Header from "../components/header/Header";
 
 import NextApp from "next/app";

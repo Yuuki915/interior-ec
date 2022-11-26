@@ -1,6 +1,6 @@
 import ItemContainer from "../../components/parts/ItemContainer";
-import { categoryQurey } from "../../components/util/productQuery";
-import { storefront } from "../../components/util/shopify";
+import { categoryQurey } from "../../util/productQuery";
+import { storefront } from "../../util/shopify";
 import { gql } from "graphql-request";
 import styles from "../../styles/categories/Products.module.css";
 

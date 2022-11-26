@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { storefront } from "../../components/util/shopify";
+import { storefront } from "../../util/shopify";
 
 export default async function handler(req, res) {
   const data = await storefront(
