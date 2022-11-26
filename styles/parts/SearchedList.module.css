@@ -1,9 +1,9 @@
 .searchedList {
   position: absolute;
-  top: 80px;
+  top: 115px;
   left: 50%;
   transform: translateX(-48%);
-  width: 50%;
+  width: 90%;
   border-radius: 5px;
   box-shadow: 0 0 2px #3d4c69;
 
@@ -37,4 +37,11 @@
 .listCategory {
   color: #757f94;
   font-size: 13px;
+}
+
+@media (min-width: 600px) {
+  .searchedList {
+    top: 80px;
+    width: 50%;
+  }
 }
