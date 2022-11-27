@@ -5,7 +5,13 @@ import { IoMdClose } from "react-icons/io";
 import styles from "../../styles/main/DesignedRoom.module.css";
 
 const DesignedRoom = () => {
-  const designedImg = ["designed3", "designed1", "designed2", "designed4"];
+  const designedImg = [
+    "designed",
+    "designed3",
+    "designed1",
+    "designed2",
+    "designed5",
+  ];
   const [displayedImg, setdisplayedImg] = useState("");
 
   const [showImg, setShowImg] = useState(false);
