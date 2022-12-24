@@ -8,4 +8,4 @@ Started from designing wireframe with Figma and it is built by Next.js.
 
 
 ## Wireframe with Figma
-![wireframe](https://user-images.githubusercontent.com/88405082/204147251-2d4dd7c6-6ee4-410a-b471-8664d32e61cf.png)
+![Group 48](https://user-images.githubusercontent.com/88405082/209423187-7af48169-8f9a-42e2-80b6-1f6b16e6b7df.png)
