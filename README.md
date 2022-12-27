@@ -21,4 +21,4 @@ Figma
 
 
 ## Wireframe with Figma
-![Group 48](https://user-images.githubusercontent.com/88405082/209423187-7af48169-8f9a-42e2-80b6-1f6b16e6b7df.png)
+![ecpic](https://user-images.githubusercontent.com/88405082/209626682-3742a429-4cf7-431a-86a7-009acb30caa7.png)
