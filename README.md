@@ -1,7 +1,7 @@
 # [Interior E-commerce Website](https://eclat-interior.vercel.app/)
 
 
-E-commercer website with shopify storefront api included search function and add cart function. 
+This is an E-commerce website with shopify storefront api included search function and add cart function. 
 
 Started from designing wireframe with Figma and it is built by Next.js.
 
@@ -9,7 +9,7 @@ Started from designing wireframe with Figma and it is built by Next.js.
 
 
 ## Tech stack
-Next.js, Shopify, GraphQL, Figma
+Next.js, GraphQL(Shopify storefront API), Figma
 
 
 
