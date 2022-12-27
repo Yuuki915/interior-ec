@@ -10,8 +10,11 @@ Started from designing wireframe with Figma and it is built by Next.js.
 
 ## Tech stack
 Next.js
+
 Shopify
+
 GraphQL
+
 Figma
 
 
