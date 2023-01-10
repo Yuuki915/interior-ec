@@ -21,6 +21,7 @@ const Header = ({ productsArr, categories }) => {
 
   const emptyCart = () => {
     window.localStorage.removeItem("eclat:shopify:cart");
+    window.localStorage.setItem("eclat:shopify:status", "dirty");
     setCart({
       id: null,
       lines: [],
@@ -40,7 +41,7 @@ const Header = ({ productsArr, categories }) => {
         setCart({
           id: localCartData.cartId,
           checkoutUrl: localCartData.checkoutUrl,
-          estimatedCost: existingCart.cart.estimatedCost,
+          cost: existingCart.cart.cost,
           lines: existingCart.cart.lines.edges,
         });
         return;
@@ -50,7 +51,7 @@ const Header = ({ productsArr, categories }) => {
       setCart({
         id: localCartData.cartId,
         checkoutUrl: localCartData.checkoutUrl,
-        estimatedCost: null,
+        cost: null,
         lines: [],
       });
 
@@ -74,7 +75,7 @@ const Header = ({ productsArr, categories }) => {
       clearInterval(interval);
     };
   }, []);
-  // console.log(cart);
+  console.log(cart);
 
   const closeHandler = () => {
     setMenuToggle(false);
@@ -131,7 +132,12 @@ const Header = ({ productsArr, categories }) => {
       {cartToggle ? (
         <>
           <Bg close={closeCart} />
-          <Cart cart={cart} emptyCart={emptyCart} closeCart={closeCart} />
+          <Cart
+            cart={cart}
+            cartToggle={cartToggle}
+            emptyCart={emptyCart}
+            closeCart={closeCart}
+          />
         </>
       ) : (
         <></>

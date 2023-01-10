@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 import styles from "../../styles/parts/Cart.module.css";
 
-const Cart = ({ cart, emptyCart, closeCart }) => {
+const Cart = ({ cart, cartToggle, emptyCart, closeCart }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       const state = window.localStorage.getItem("eclat:shopify:status");
@@ -20,10 +20,10 @@ const Cart = ({ cart, emptyCart, closeCart }) => {
     };
   }, []);
 
-  const total = cart?.estimatedCost?.totalAmount.amount;
+  const total = cart?.cost?.totalAmount.amount;
   // console.log(cart);
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${cartToggle ? styles.open : ""}`}>
       <div>
         <div className={styles.iconContainer}>
           <IoMdClose
@@ -67,20 +67,12 @@ const Cart = ({ cart, emptyCart, closeCart }) => {
                       {node.merchandise.product.title}
                     </p>
                     <p className={styles.price}>
-                      $ {node.estimatedCost.totalAmount.amount}
+                      $ {node.cost.totalAmount.amount}
                     </p>
                     <div className={styles.qty}>
                       <span>QTY: {node.quantity}</span>
-                      {/* <input
-                    className={styles.qtyInput}
-                    value={node.quantity}
-                    type="number"
-                  /> */}
                     </div>
                   </div>
-                  {/* <div className={styles.actions}>
-                <p>remove</p>
-              </div> */}
                 </div>
               </>
             </div>

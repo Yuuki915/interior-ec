@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         cart(id: $cartId) {
           id
           checkoutUrl
-          estimatedCost {
+          cost {
             totalAmount {
               amount
             }
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
             edges {
               node {
                 quantity
-                estimatedCost {
+                cost {
                   subtotalAmount {
                     amount
                     currencyCode

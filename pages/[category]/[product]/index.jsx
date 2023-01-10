@@ -59,7 +59,7 @@ const Page = ({ product, products }) => {
   const imgSrcs = product.images.edges.map(({ node }) => node.url);
   const mainImgSrc = imgSrcs.shift();
   const varinantId = product.variants.edges[0].node.id;
-
+  console.log(product);
   const recommendedProducts = products.edges.filter(
     (item) => item.node.handle !== product.handle
   );
