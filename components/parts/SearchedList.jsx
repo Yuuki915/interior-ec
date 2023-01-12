@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/parts/SearchedList.module.css";
 
-const SearchedList = ({ searchedLists, setSearchToggle }) => {
-  const closeList = () => {
-    setSearchToggle(false);
-  };
+const SearchedList = ({ searchedLists, closeList }) => {
   return (
     <div className={styles.searchedList}>
       <ul>

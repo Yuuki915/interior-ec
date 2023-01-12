@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "./Navbar";
 import Search from "../parts/Search";
 import { BiMenuAltLeft } from "react-icons/bi";
@@ -107,13 +108,19 @@ const Header = ({ productsArr, categories }) => {
             </>
           )}
         </div>
-        <Image
-          className={styles.logo}
-          src="/images/logo.svg"
-          alt="sitelogo"
-          width={130}
-          height={50}
-        />
+
+        <Link href="/">
+          <a>
+            <Image
+              className={styles.logo}
+              src="/images/logo.svg"
+              alt="sitelogo"
+              width={130}
+              height={50}
+            />
+          </a>
+        </Link>
+
         <div className={styles.icons}>
           <BsCart3 className={styles.cartIcon} onClick={HandleCart} />
           {qty === 0 ? <></> : <div className={styles.qty}>{qty}</div>}

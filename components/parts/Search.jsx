@@ -6,7 +6,13 @@ import styles from "../../styles/parts/Search.module.css";
 const Search = ({ productsArr }) => {
   const [searchToggle, setSearchToggle] = useState(false);
 
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("");
+  const closeList = () => {
+    setValue("");
+    setSearchToggle(false);
+    console.log(value);
+  };
+
   const onChange = (e) => {
     setValue(e.target.value);
     if (value.length <= 1) {
@@ -15,6 +21,7 @@ const Search = ({ productsArr }) => {
       setSearchToggle(true);
     }
   };
+
   const searchedLists = productsArr.filter((product) =>
     product.title.toLowerCase().includes(value)
   );
@@ -25,6 +32,7 @@ const Search = ({ productsArr }) => {
         <input
           className={styles.input}
           type="text"
+          value={value}
           onChange={onChange}
           placeholder="Search"
         />
@@ -33,10 +41,7 @@ const Search = ({ productsArr }) => {
       <ul>
         {searchToggle ? (
           <>
-            <SearchedList
-              searchedLists={searchedLists}
-              setSearchToggle={setSearchToggle}
-            />
+            <SearchedList searchedLists={searchedLists} closeList={closeList} />
           </>
         ) : (
           <></>

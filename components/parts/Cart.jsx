@@ -21,7 +21,8 @@ const Cart = ({ cart, emptyCart, closeCart }) => {
   }, []);
 
   const total = cart?.estimatedCost?.totalAmount.amount;
-  // console.log(cart);
+  console.log(cart);
+  
   return (
     <div className={styles.container}>
       <div>
@@ -90,7 +91,9 @@ const Cart = ({ cart, emptyCart, closeCart }) => {
       {cart.lines.length === 0 ? (
         <div className={styles.noitems}>No items</div>
       ) : (
-        <div onClick={emptyCart}>Empty Cart</div>
+        <div className={styles.emptyCart} onClick={emptyCart}>
+          Empty Cart
+        </div>
       )}
     </div>
   );
